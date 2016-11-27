@@ -35,7 +35,8 @@ RUN git config --global color.ui true && \
 	git config --global core.excludesfile ~/.gitignore_global
 
 ###### install docker client
-RUN yum -y install docker
+RUN yum -y install docker && \
+	cd /usr/share/ && git clone https://github.com/leeonky/dmg.git
 
 ###### load dot files
 USER $USER_NAME
