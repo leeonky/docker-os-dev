@@ -16,7 +16,8 @@ RUN yum -y groupinstall 'Development Tools'
 ###### install git and config
 RUN yum -y install \
 	zlib-devel \
-	perl-ExtUtils-MakeMaker
+	perl-ExtUtils-MakeMaker \
+	curl-devel
 
 RUN wget https://www.kernel.org/pub/software/scm/git/git-2.10.2.tar.gz && \
 	tar -zxf git-2.10.2.tar.gz && \
@@ -38,4 +39,4 @@ RUN yum -y install docker
 
 ###### load dot files
 USER $USER_NAME
-RUN rm ~/* -rf && cd ~/ && git clone https://github.com/leeonky/dot_dev.git .
+RUN cd ~/ && (ls -A | xargs rm -rf) && git clone https://github.com/leeonky/dot_dev.git .
