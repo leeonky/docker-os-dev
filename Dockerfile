@@ -22,7 +22,7 @@ RUN wget https://www.kernel.org/pub/software/scm/git/git-2.10.2.tar.gz && \
 	tar -zxf git-2.10.2.tar.gz && \
 	cd git-2.10.2 && \
 	./configure && \
-	make && \
+	make -j4 && \
 	make install && \
 	cd ../ && \
 	rm -rf git-2.10.2*
