@@ -33,4 +33,5 @@ RUN git config --global color.ui true && \
 	git config --global user.name 'leeonky' && \
 	git config --global core.excludesfile ~/.gitignore_global
 
-ADD bashrc.d $USER_HOME/.bashrc.d
+###### install docker client
+RUN yum -y install docker
