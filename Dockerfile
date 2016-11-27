@@ -35,3 +35,7 @@ RUN git config --global color.ui true && \
 
 ###### install docker client
 RUN yum -y install docker
+
+###### load dot files
+USER $USER_NAME
+RUN rm ~/* -rf && cd ~/ && git clone https://github.com/leeonky/dot_dev.git .
