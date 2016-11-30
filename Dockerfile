@@ -28,12 +28,6 @@ RUN wget https://www.kernel.org/pub/software/scm/git/git-2.10.2.tar.gz && \
 	cd ../ && \
 	rm -rf git-2.10.2*
 
-ADD .gitignore_global $DEV_HOME/
-RUN git config --global color.ui true && \
-	git config --global user.email "leeonky@gmail.com" && \
-	git config --global user.name 'leeonky' && \
-	git config --global core.excludesfile ~/.gitignore_global
-
 ###### install docker client
 RUN yum -y install docker
 
