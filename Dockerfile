@@ -29,10 +29,8 @@ RUN wget https://www.kernel.org/pub/software/scm/git/git-2.10.2.tar.gz && \
 	rm -rf git-2.10.2*
 
 ###### install docker client
-ADD install-docker /usr/local/bin/
-RUN chmod +x /usr/local/bin/install-docker
 RUN install-docker
 
 ###### load dot files
 USER $USER_NAME
-RUN cd ~/ && (ls -A | xargs rm -rf) && git clone https://github.com/leeonky/dot_dev.git .
+RUN cd ~/ && (ls -A | xargs rm -rf)
