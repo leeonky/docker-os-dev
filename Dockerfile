@@ -33,4 +33,3 @@ RUN install-docker
 
 ###### load dot files
 USER $USER_NAME
-RUN cd ~/ && (ls -A | xargs rm -rf)
