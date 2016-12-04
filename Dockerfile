@@ -29,7 +29,9 @@ RUN wget https://www.kernel.org/pub/software/scm/git/git-2.10.2.tar.gz && \
 	rm -rf git-2.10.2*
 
 ###### install docker client
-RUN yum -y install docker
+ADD install-docker /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-docker
+RUN install-docker
 
 ###### load dot files
 USER $USER_NAME
