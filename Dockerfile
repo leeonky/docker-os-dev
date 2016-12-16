@@ -19,7 +19,7 @@ RUN yum -y install \
 	perl-ExtUtils-MakeMaker \
 	curl-devel
 
-RUN wget https://www.kernel.org/pub/software/scm/git/git-2.10.2.tar.gz && \
+RUN wget https://github.com/leeonky/tools_dev/raw/master/git-2.10.2.tar.gz && \
 	tar -zxf git-2.10.2.tar.gz && \
 	cd git-2.10.2 && \
 	./configure && \
