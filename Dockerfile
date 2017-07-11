@@ -10,7 +10,8 @@ RUN yum -y install \
 	wget \
 	unzip.x86_64 \
 	dos2unix \
-	jq
+	jq \
+	deltarpm
 
 ###### install basic development tools
 RUN yum -y groupinstall 'Development Tools'
