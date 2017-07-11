@@ -3,7 +3,7 @@ FROM leeonky/centos-7
 USER root
 
 ###### install basic tools
-RUN yum -y install \
+RUN yum -y update && yum -y install \
 	net-tools.x86_64 \
 	openssh-clients.x86_64 \
 	bash-completion \
