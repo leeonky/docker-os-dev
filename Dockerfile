@@ -8,7 +8,9 @@ RUN yum -y install \
 	openssh-clients.x86_64 \
 	bash-completion \
 	wget \
-	unzip.x86_64
+	unzip.x86_64 \
+	dos2unix \
+	jq
 
 ###### install basic development tools
 RUN yum -y groupinstall 'Development Tools'
