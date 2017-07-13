@@ -11,16 +11,16 @@ RUN yum -y install \
 	unzip.x86_64 \
 	dos2unix \
 	jq \
-	deltarpm
+	deltarpm && yum clean all
 
 ###### install basic development tools
-RUN yum -y groupinstall 'Development Tools'
+RUN yum -y groupinstall 'Development Tools' && yum clean all
 
 ###### install git and config
 RUN yum -y install \
 	zlib-devel \
 	perl-ExtUtils-MakeMaker \
-	curl-devel
+	curl-devel && yum clean all
 
 RUN wget https://github.com/leeonky/tools_dev/raw/master/git-2.10.2.tar.gz && \
 	tar -zxf git-2.10.2.tar.gz && \
