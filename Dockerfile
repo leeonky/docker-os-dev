@@ -1,28 +1,29 @@
-FROM leeonky/centos-7
+FROM leeonky/ubuntu-1604
 
 USER root
 
 ###### install basic tools
-RUN yum -y install \
-	net-tools.x86_64 \
-	openssh-clients.x86_64 \
+#skip deltarpm
+RUN apt-get install -y \
+	net-tools \
+	iputils-ping \
+	dpkg-dev \
+	openssh-client \
 	bash-completion \
 	wget \
-	unzip.x86_64 \
+	zip \
+	unzip \
 	dos2unix \
-	jq \
-	deltarpm && yum clean all
-
-###### install basic development tools
-RUN yum -y groupinstall 'Development Tools' && yum clean all
+	which \
+	jq && \
+	apt-get clean
 
 ###### install git and config
-RUN yum -y install \
-	zlib-devel \
-	perl-ExtUtils-MakeMaker \
-	curl-devel && yum clean all
-
-RUN wget https://github.com/leeonky/tools_dev/raw/master/git-2.10.2.tar.gz && \
+RUN apt-get -y install \
+	zlib1g-dev \
+	gettext && \
+	apt-get clean && \
+	wget https://github.com/leeonky/tools_dev/raw/master/git-2.10.2.tar.gz && \
 	tar -zxf git-2.10.2.tar.gz && \
 	cd git-2.10.2 && \
 	./configure && \
