@@ -5,6 +5,7 @@ USER root
 ###### install basic tools
 #skip deltarpm
 RUN apt-get install -y \
+	software-properties-common \
 	net-tools \
 	iputils-ping \
 	dpkg-dev \
