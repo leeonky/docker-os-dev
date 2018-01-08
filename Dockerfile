@@ -1,4 +1,4 @@
-FROM leeonky/ubuntu-1604
+FROM leeonky/os-base:ubuntu
 
 USER root
 
