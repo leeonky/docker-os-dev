@@ -20,6 +20,7 @@ RUN apt-get install -y \
 ###### install git and config
 RUN apt-get -y install \
 	zlib1g-dev \
+	libcurl4-openssl-dev \
 	gettext && \
 	apt-get clean && \
 	wget https://github.com/leeonky/tools_dev/raw/master/git-2.10.2.tar.gz && \
