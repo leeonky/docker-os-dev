@@ -14,7 +14,6 @@ RUN apt-get install -y \
 	zip \
 	unzip \
 	dos2unix \
-	which \
 	jq && \
 	apt-get clean
 
